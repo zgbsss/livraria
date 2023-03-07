@@ -13,4 +13,12 @@ class Editora(models.Model):
     def __str__(self):
         return self.nome
 
-# Create your models here.
+class Autor(models.Model):
+    nome = models.CharField(max_length=255)
+    email = models.EmailField(null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.nome} - {self.email}"
+    
+    class Meta:
+        verbose_name_plural = "Autores"
